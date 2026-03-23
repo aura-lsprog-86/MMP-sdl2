@@ -38,4 +38,4 @@ COPY support/03-crossbuild-deps.sh .
 RUN chmod +x 03-crossbuild-deps.sh \
   && ./03-crossbuild-deps.sh
 
-CMD ['/bin/bash']
+CMD ["/bin/bash"]
