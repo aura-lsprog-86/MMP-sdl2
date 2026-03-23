@@ -1,0 +1,18 @@
+services:
+  mmp-sdl2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mmp-sdl2:latest
+    container_name: mmp-sdl2
+    volumes:
+      - ./in:/app/in
+      - ./out:/app/out
+    deploy:
+      resources:
+        limits:
+          cpus: '8.0'
+          memory: 16G
+        reservations:
+          cpus: '2.0'
+          memory: 4G
