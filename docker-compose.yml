@@ -4,6 +4,8 @@ services:
       context: .
       dockerfile: Dockerfile
     image: mmp-sdl2:latest
+    stdin_open: true
+    tty: true
     container_name: mmp-sdl2
     volumes:
       - ./workspace:/app/workspace
