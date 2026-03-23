@@ -21,3 +21,5 @@ make -j"$(nproc)" sdl2 CFLAGS="-Wno-psabi" CXXFLAGS="-Wno-psabi"
 ls sdl2/build/.libs/libSDL2-2.0.so.0*
 # - Expecting:
 # sdl2/build/.libs/libSDL2-2.0.so.0  sdl2/build/.libs/libSDL2-2.0.so.0.18.2
+
+cd ..
