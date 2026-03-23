@@ -1,0 +1,8 @@
+in/
+out/
+
+.dockerignore
+.gitattributes
+docker-compose.yml
+Dockerfile
+LICENSE
