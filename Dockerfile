@@ -21,16 +21,19 @@ RUN apt-get update && apt-get upgrade -y --no-install-recommends \
 
 WORKDIR /app
 
-COPY 01-prepare-deps.sh .
+COPY support/setup-env.sh .
+RUN chmod +x setup-env.sh
+
+COPY support/01-prepare-deps.sh .
 RUN chmod +x 01-prepare-deps.sh \
   && ./01-prepare-deps.sh
   
-COPY 02-build-sources.sh .
+COPY support/02-build-sources.sh .
 RUN chmod +x 02-build-sources.sh \
   && ./02-build-sources.sh
 
-COPY 03-crossbuild-deps.sh .
+COPY support/03-crossbuild-deps.sh .
 RUN chmod +x 03-crossbuild-deps.sh \
   && ./03-crossbuild-deps.sh
 
-CMD ['sh']
+CMD ['/bin/bash']

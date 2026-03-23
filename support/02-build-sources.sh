@@ -1,10 +1,10 @@
-#/bin/sh
+#!/bin/bash
+set -euo pipefail
 
 # Build SDL2 for MM(P)
 # Instructions based on: https://github.com/Luspin/sdl2-MMP?tab=readme-ov-file#clone--build-steward-fusdl2
 
 cd sdl2-master/
-
 find . -type f -name "*.sh" -exec chmod +x {} \;
 
 # Build steps provided by the SDL2 repo:

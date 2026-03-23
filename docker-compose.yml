@@ -6,8 +6,7 @@ services:
     image: mmp-sdl2:latest
     container_name: mmp-sdl2
     volumes:
-      - ./in:/app/in
-      - ./out:/app/out
+      - ./workspace:/app/workspace
     deploy:
       resources:
         limits:
