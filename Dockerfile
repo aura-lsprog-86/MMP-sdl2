@@ -1,5 +1,7 @@
 FROM ubuntu:24.04
 
+SHELL ["/bin/bash", "-exo", "pipefail", "-c"]
+
 RUN apt-get update && apt-get upgrade -y --no-install-recommends \
   build-essential \
   cmake \
