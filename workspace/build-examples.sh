@@ -6,7 +6,7 @@ set -euo pipefail
 
 source /app/setup-env.sh
 
-bsdtar -xf examples.zip -C examples examples/
+bsdtar -xf examples.zip -C . examples/
 
 cd examples/
 
@@ -23,12 +23,12 @@ cp -av "$SDL2_ROOT"/swiftshader/build/libGLESv2.so ./libs/
 ln -sf libGLESv2.so ./libs/libGLESv2.so.2
 
 # 3) SDL2 dependency libraries
-cp -av "$SDL2_ROOT"/deps-out/lib/libjson-c.so.5*            ./libs/
-cp -av "$SDL2_ROOT"/deps-out/lib/libSDL2_gfx-1.0.so.0*      ./libs/
-cp -av "$SDL2_ROOT"/deps-out/lib/libSDL2_net-2.0.so.0*      ./libs/
-cp -av "$SDL2_ROOT"/deps-out/lib/libSDL2_image-2.0.so.0*    ./libs/
-cp -av "$SDL2_ROOT"/deps-out/lib/libSDL2_ttf-2.0.so.0*      ./libs/
-cp -av "$SDL2_ROOT"/deps-out/lib/libSDL2_mixer-2.0.so.0*    ./libs/
+cp -av "$SDL2_ROOT"/sdl2/deps-out/lib/libjson-c.so.5*            ./libs/
+cp -av "$SDL2_ROOT"/sdl2/deps-out/lib/libSDL2_gfx-1.0.so.0*      ./libs/
+cp -av "$SDL2_ROOT"/sdl2/deps-out/lib/libSDL2_net-2.0.so.0*      ./libs/
+cp -av "$SDL2_ROOT"/sdl2/deps-out/lib/libSDL2_image-2.0.so.0*    ./libs/
+cp -av "$SDL2_ROOT"/sdl2/deps-out/lib/libSDL2_ttf-2.0.so.0*      ./libs/
+cp -av "$SDL2_ROOT"/sdl2/deps-out/lib/libSDL2_mixer-2.0.so.0*    ./libs/
 
 # Clean, then compile all example files in parallel
 make clean
